@@ -1,6 +1,6 @@
 package org.example.service.model;
 
-import static org.example.service.JsonUtil.toJson;
+import static org.example.service.util.JsonUtil.toJson;
 
 public class JsonEntity {
 
