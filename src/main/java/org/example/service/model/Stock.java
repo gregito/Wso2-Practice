@@ -1,14 +1,17 @@
 package org.example.service.model;
 
-public class Stock {
+public class Stock extends JsonEntity {
 
-    private final String symbol;
+    private String symbol;
 
-    private final String name;
+    private String name;
 
-    private final double low;
+    private double low;
 
-    private final double high;
+    private double high;
+
+    public Stock() {
+    }
 
     public Stock(String symbol, String name, double low, double high) {
         this.symbol = symbol;

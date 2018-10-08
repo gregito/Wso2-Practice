@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.example.service.controller.StockController;
 
-public class EndpointStore {
+class EndpointStore {
 
     private static final List<Class<?>> SERVICES = new LinkedList<>();
 
@@ -16,7 +16,7 @@ public class EndpointStore {
 
     private EndpointStore() {}
 
-    public static List<Class<?>> getEndpoints() {
+    static List<Class<?>> getEndpoints() {
         return SERVICES;
     }
 

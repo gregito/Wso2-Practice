@@ -15,7 +15,7 @@ public class AccessDeniedExceptionMapper implements ExceptionMapper<AccessDenied
 
     @Override
     public Response toResponse(AccessDeniedException e) {
-        LOGGER.info(e.getMessage());
+        LOGGER.warn(e.getMessage());
         return Response.status(Response.Status.FORBIDDEN).type(PLAIN_TEXT.getValue()).entity("Access denied!").build();
     }
 

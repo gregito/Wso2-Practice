@@ -47,12 +47,21 @@
             <artifactId>jaxb-api</artifactId>
             <version>${javax.xml.bind.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>${jackson-mapper-asl.version}</version>
+        </dependency>
+
     </dependencies>
 
     <properties>
         <microservice.mainClass>org.example.service.Application</microservice.mainClass>
+        <jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
         <javax.annotation.version>1.3.2</javax.annotation.version>
         <javax.xml.bind.version>2.3.0</javax.xml.bind.version>
+        <jackson-core.version>2.9.7</jackson-core.version>
         <javax.javaee.version>7.0</javax.javaee.version>
     </properties>
 

@@ -16,6 +16,8 @@
 
 package org.example.service.controller;
 
+import java.util.Set;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -24,7 +26,6 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.Response;
 
 import org.example.service.model.Stock;
 import org.example.service.services.StockQuoteService;
@@ -37,28 +38,33 @@ public class StockController {
     @GET
     @Path("/{symbol}")
     @Produces("application/json")
-    public Response get(@PathParam("symbol") String symbol) {
+    public Stock get(@PathParam("symbol") String symbol) {
         return stockQuoteService.getStock(symbol);
+    }
+
+    @GET
+    @Path("/list")
+    public Set<Stock> listStocks() {
+        return stockQuoteService.listStocks();
     }
 
     @POST
     @Path("/")
     @Consumes("application/json")
-    public Response post(Stock stock) {
+    public Stock post(Stock stock) {
         return stockQuoteService.addStock(stock);
     }
 
     @PUT
     @Path("/")
-    public void put() {
-        // TODO: Implementation for HTTP PUT request
-        System.out.println("PUT invoked");
+    public void put(Stock stock) {
+        stockQuoteService.modifyStock(stock);
     }
 
     @DELETE
-    @Path("/")
-    public void delete() {
-        // TODO: Implementation for HTTP DELETE request
-        System.out.println("DELETE invoked");
+    @Path("/{symbol}")
+    public void delete(@PathParam("symbol") String symbol) {
+        stockQuoteService.delete(symbol);
     }
+
 }
