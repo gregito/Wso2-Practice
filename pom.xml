@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>org.wso2.msf4j</groupId>
+        <artifactId>msf4j-service</artifactId>
+        <version>2.6.4</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>msf4j-service</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>WSO2 MSF4J Microservice</name>
+
+
+    <dependencies>
+        <!-- Uncomment the following if you want to enable metrics & monitoring -->
+        <!--
+        <dependency>
+           <groupId>org.wso2.msf4j</groupId>
+           <artifactId>msf4j-analytics</artifactId>
+        </dependency>
+        -->
+
+        <!--Required!-->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>${javax.javaee.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--Required!-->
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>${javax.annotation.version}</version>
+        </dependency>
+
+        <!--Required!-->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>${javax.xml.bind.version}</version>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <microservice.mainClass>org.example.service.Application</microservice.mainClass>
+        <javax.annotation.version>1.3.2</javax.annotation.version>
+        <javax.xml.bind.version>2.3.0</javax.xml.bind.version>
+        <javax.javaee.version>7.0</javax.javaee.version>
+    </properties>
+
+</project>
