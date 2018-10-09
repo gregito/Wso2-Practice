@@ -6,6 +6,7 @@ import java.util.Objects;
 
 import javax.ws.rs.ext.ExceptionMapper;
 
+import org.example.service.exception.impl.ServiceInstantiationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.wso2.msf4j.MicroservicesRunner;
@@ -44,7 +45,7 @@ public class ServiceDeployer {
         try {
             return endpoint.newInstance();
         } catch (InstantiationException | IllegalAccessException e) {
-            throw new RuntimeException(e);
+            throw new ServiceInstantiationException(e);
         }
     }
 

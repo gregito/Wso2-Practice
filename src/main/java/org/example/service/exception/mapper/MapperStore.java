@@ -8,6 +8,7 @@ import javax.ws.rs.ext.ExceptionMapper;
 
 import org.example.service.exception.mapper.mappers.GeneralExceptionMapper;
 import org.example.service.exception.mapper.mappers.JsonConversionExceptionMapper;
+import org.example.service.exception.mapper.mappers.ServiceInstantiationExceptionMapper;
 import org.example.service.exception.mapper.mappers.SymbolNotFoundMapper;
 
 public class MapperStore {
@@ -30,7 +31,8 @@ public class MapperStore {
         MAPPERS.addAll(Arrays.asList(
                 new SymbolNotFoundMapper(),
                 new GeneralExceptionMapper(),
-                new JsonConversionExceptionMapper()
+                new JsonConversionExceptionMapper(),
+                new ServiceInstantiationExceptionMapper()
         ));
     }
 
