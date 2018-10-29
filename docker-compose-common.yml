@@ -1,0 +1,8 @@
+stockquote:
+
+  build: ./stockquote/
+  restart: unless-stopped
+  ports:
+  - "1234:1234"
+  environment:
+    STOCK_QUOTE_SERVICE_PORT: 1234
